@@ -1,0 +1,19 @@
+---
+description: PrusaSlicer printer, process, and filament settings
+globs: ["slicer/prusa-slicer/**/*.ini", "slicer/prusa-slicer/**/*.json"]
+alwaysApply: false
+---
+
+# PrusaSlicer
+
+Use [Prusa Knowledge Base](https://help.prusa3d.com/category/prusaslicer_204) as the reference for:
+
+- **Printer Settings**: Retraction, firmware, nozzle profiles, bed models
+- **Print Settings**: Layers, perimeters, infill, supports, skirt/brim
+- **Filament Settings**: Temperature, flow, bed adhesion
+- **Profiles**: Configuration wizard, custom presets
+
+Project layout:
+- `slicer/prusa-slicer/printer/` — printer configs
+- `slicer/prusa-slicer/process/` — print presets (layer height, speed, etc.)
+- `slicer/prusa-slicer/filament/` — material profiles

@@ -1,0 +1,19 @@
+---
+description: Cura printer, quality, and material settings
+globs: ["slicer/cura/**/*"]
+alwaysApply: false
+---
+
+# Cura
+
+Use [UltiMaker Cura Support](https://support.ultimaker.com/hc/en-us/categories/360003567299-UltiMaker-Cura) as the reference for:
+
+- **Printer Settings**: Machine config, extruder, build plate
+- **Quality Settings**: Layer height, line width, walls, infill
+- **Material Settings**: Temperatures, flow, retraction
+- **Support**: Tree supports, brim, raft
+
+Project layout:
+- `slicer/cura/printer/` — printer definitions
+- `slicer/cura/quality/` — quality presets
+- `slicer/cura/material/` — material profiles

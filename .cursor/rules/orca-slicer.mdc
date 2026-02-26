@@ -1,6 +1,6 @@
 ---
 description: Orca Slicer printer, process, and calibration settings
-globs: ["slicer/**/*.ini", "slicer/**/*.json", "**/*.3mf"]
+globs: ["slicer/orca-slicer/**/*.ini", "slicer/orca-slicer/**/*.json", "**/*.3mf"]
 alwaysApply: false
 ---
 

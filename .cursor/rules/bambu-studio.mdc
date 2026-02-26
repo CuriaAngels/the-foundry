@@ -1,0 +1,19 @@
+---
+description: Bambu Studio printer, process, and filament settings
+globs: ["slicer/bambu-studio/**/*.ini", "slicer/bambu-studio/**/*.json"]
+alwaysApply: false
+---
+
+# Bambu Studio
+
+Use [Bambu Lab Wiki](https://wiki.bambulab.com/en/software/bambu-studio/studio-pages-outline) as the reference for:
+
+- **Printer Settings**: Bambu printers, AMS, multi-device
+- **Print Settings**: Slicing params, supports, seam, brim, variable layer height
+- **Multi-Color**: Color painting, filament waste reduction, AMS usage
+- **Calibration**: Flow rate, dynamic flow calibration
+
+Project layout:
+- `slicer/bambu-studio/printer/` — printer configs (P2S, A1, etc.)
+- `slicer/bambu-studio/process/` — print presets
+- `slicer/bambu-studio/filament/` — material profiles
