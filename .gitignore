@@ -1,0 +1,14 @@
+# Build outputs
+build/*
+!build/.gitkeep
+*.gcode
+
+# Optional: uncomment to ignore exported STL
+# *.stl
+
+# Optional: uncomment to ignore 3MF project files
+# *.3mf
+
+# OS
+.DS_Store
+Thumbs.db

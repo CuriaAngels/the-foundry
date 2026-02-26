@@ -1,0 +1,13 @@
+---
+description: When creating rules, use Cursor Docs as reference
+alwaysApply: true
+---
+
+# Rule-for-Rules
+
+When the user requests creation of Cursor rules (new rules, RULE.md, .cursor/rules, coding standards, etc.):
+
+1. **Consult** [Cursor Docs](https://cursor.com/docs) for format, structure, and best practices
+2. Use `.mdc` format in `.cursor/rules/` with YAML frontmatter
+3. Configure `globs` for file-specific rules, `alwaysApply: true` for universal rules
+4. Keep rules concise (under 50 lines when practical) and actionable

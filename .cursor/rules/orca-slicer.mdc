@@ -1,0 +1,19 @@
+---
+description: Orca Slicer printer, process, and calibration settings
+globs: ["slicer/**/*.ini", "slicer/**/*.json", "**/*.3mf"]
+alwaysApply: false
+---
+
+# Orca Slicer
+
+Use [Orca Slicer Wiki](https://orca-slicer.com/wiki/) as the reference for:
+
+- **Printer Settings**: K1C config, extruder, retraction, bed mesh
+- **Process Settings**: Quality, strength, speed, support, multimaterial
+- **Material/Filament**: Temperatures, flow, bed adhesion
+- **Calibration**: Pressure advance, flow rate, input shaping, VFA
+
+Project layout:
+- `slicer/orca-slicer/printer/` — printer configs (K1C, Bambu, etc.)
+- `slicer/orca-slicer/process/` — layer height, speed, support presets
+- `slicer/orca-slicer/filament/` — PLA, PETG, and other material profiles

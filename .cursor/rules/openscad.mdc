@@ -1,0 +1,17 @@
+---
+description: OpenSCAD syntax and conventions
+globs: "**/*.scad"
+alwaysApply: false
+---
+
+# OpenSCAD
+
+Use [OpenSCAD documentation](https://openscad.org/documentation.html) as the reference for:
+
+- **Language Reference**: Primitives, transformations, boolean ops, modules, functions
+- **Tutorial**: Parameterization, control flow, loops, extrusion
+- **User Manual**: Import/export, paths, libraries, customizer
+
+Project layout:
+- `src/openscad/projects/` — per-project .scad files
+- `src/openscad/lib/` — shared modules and libraries (BOSL2, etc.)
