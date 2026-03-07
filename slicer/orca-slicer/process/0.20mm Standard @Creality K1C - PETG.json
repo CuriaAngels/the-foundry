@@ -1,0 +1,15 @@
+{
+    "bottom_shell_layers": "5",
+    "enable_support": "1",
+    "from": "User",
+    "inherits": "0.20mm Standard @Creality K1C",
+    "is_custom_defined": "0",
+    "name": "0.20mm Standard @Creality K1C - PETG",
+    "print_settings_id": "0.20mm Standard @Creality K1C - PETG",
+    "seam_position": "back",
+    "sparse_infill_density": "100%",
+    "sparse_infill_pattern": "line",
+    "top_shell_layers": "5",
+    "version": "2.2.0.4",
+    "wall_loops": "5"
+}

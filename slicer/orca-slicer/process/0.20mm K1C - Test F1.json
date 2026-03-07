@@ -1,0 +1,18 @@
+{
+    "bottom_shell_layers": "5",
+    "bottom_surface_pattern": "zig-zag",
+    "from": "User",
+    "inherits": "0.20mm Standard @Creality K1C",
+    "internal_solid_infill_pattern": "concentric",
+    "is_custom_defined": "0",
+    "layer_height": "0.12",
+    "name": "0.20mm K1C - Test F1",
+    "precise_outer_wall": "1",
+    "print_settings_id": "0.20mm K1C - Test F1",
+    "seam_position": "back",
+    "sparse_infill_pattern": "concentric",
+    "top_shell_layers": "5",
+    "top_surface_pattern": "concentric",
+    "version": "2.2.0.4",
+    "wall_loops": "4"
+}
