@@ -35,6 +35,11 @@ See each slicer's `README.md` for import/export instructions.
 
 Orca Slicer does not ship K1C profiles by default. Community profiles (compatible with K1 Max) are available from [Printables](https://www.printables.com/model/536422-creality-k1k1-max-orcaslicer-profile/files) or [open-rdc/Creality-K1-Slicer-Profiles](https://github.com/open-rdc/creality-k1-slicer-profiles). Import them, then export to `slicer/orca-slicer/` to version your tweaks.
 
+## Editor Extensions (VS Code / Cursor)
+
+- **OpenSCAD** (`Antyos.openscad`) — Syntax highlighting, preview, export for `.scad` files. Requires OpenSCAD installed for Preview/Export.
+- **vscode-stl-viewer** (`mtsmfm.vscode-stl-viewer`) — View STL files in the editor. Open an `.stl` and use the preview icon or right-click → Open Preview.
+
 ## References
 
 - [OpenSCAD Documentation](https://openscad.org/documentation.html)
