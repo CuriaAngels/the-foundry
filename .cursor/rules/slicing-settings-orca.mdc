@@ -1,0 +1,34 @@
+---
+description: Use Orca Slicer UI paths and field names when discussing slicing settings
+alwaysApply: true
+---
+
+# Slicing Settings — Orca Slicer UI Paths
+
+When the user asks about slicing settings, **give exact UI paths and values to fill in**. No "why" explanations unless asked.
+
+## Format
+
+**Process** (top bar) → **Tab** (Quality / Strength / Speed / etc.) → **Section** (collapsible) → **Field**: value
+
+## Structural parts (engine mount, CF) — where to fill in what
+
+| Tab | Section | Field | Value |
+|-----|---------|-------|-------|
+| Strength | Infill | Sparse Infill Density | `100%` |
+| Strength | Infill | Sparse Infill Pattern | `grid` or `triangles` |
+| Strength | Walls | Wall Loops | `5` |
+| Strength | Top and Bottom Shells | Top Shell Layers | `5` |
+| Strength | Top and Bottom Shells | Bottom Shell Layers | `5` |
+
+## Orca Slicer UI structure (from screenshot)
+
+- **Process** → **Global** → select process preset (e.g. `0.12mm Fine @Creality K1C`)
+- **Quality** tab: Precision, Ironing, Wall generator, Walls and surfaces
+- **Strength** tab: Infill, Walls, Top and Bottom Shells
+- **Strength** tab: Infill, Top and Bottom Shells
+- Use search (magnifying glass) to jump to a field by name
+
+## Rule
+
+Always specify: Tab → Section → Field → Value. Skip explanations unless the user asks.
