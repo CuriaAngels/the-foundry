@@ -1,6 +1,9 @@
-// Engine mount plate v3 — rounded body + all holes (no pockets, but keeps outer holes)
+// Engine mount plate v9 — from v8:
+//   Step 1: holes 8 & 10 at Y = 3.9 (was 4.3 in v8)
+//   Step 2–3: 1.5 mm deep top-face pocket (into -Z from top), 8 mm × 20 mm in XY,
+//             centered on hole pairs 8–9 (left rail) and 10–11 (right rail)
 // Units: mm
-// Reference: engine-mount_75x48x4.scad
+// Reference: engine-mount_75x48x4_v8.scad
 
 $fn = 96;
 
@@ -12,8 +15,13 @@ hole_label_height = 0.35; // mm, extrusion on +Z from top face
 // ---- Main parameters (known) ----
 W = 75;          // overall width
 H = 48;          // overall height
-T = 4;           // thickness
+T = 2;           // thickness
 R = 20;          // corner radius
+
+// Rectangular indent: 8 mm on X, 20 mm on Y, cuts 1.5 mm from top (+Z) toward bottom (-Z)
+indent_depth = 1.5;
+indent_wx = 8;
+indent_wy = 20;
 
 // ---- Main hole parameters (MEASURE/CONFIRM) ----
 // Label # matches on-plate digits when show_hole_labels is true (order = 1 … len).
@@ -28,14 +36,14 @@ holes = [
   [   0, -12,  4]      // label 7 — small bottom-center hole
 ];
 
-// ---- Outer pocket holes (4 total: 2 left, 2 right) ----
+// ---- Outer pocket holes (4 total: 2 left, 2 right) — same layout as v8 ----
 // Labels continue after holes[] (here: 8 … 7+len(pocket_holes)).
 pocket_holes = [
-  // [x, y, diameter] — same convention as holes[]
-  [ -27.7,  4.3, 3.2],   // label 8 — left top
-  [ -27.7,  -7.3, 3.2],  // label 9 — left bottom
-  [  27.7,  4.3, 3.2],   // label 10 — right top
-  [  27.7,  -7.3, 3.2],  // label 11 — right bottom
+  // [x, y, diameter]
+  [ -27.7,  3.9, 3.2],   // label 8 — left top (v8: 4.3)
+  [ -27.7, -7.3, 3.2],   // label 9 — left bottom
+  [  27.7,  3.9, 3.2],   // label 10 — right top (v8: 4.3)
+  [  27.7, -7.3, 3.2],   // label 11 — right bottom
 ];
 
 module rounded_rect(w, h, r) {
@@ -46,6 +54,12 @@ module rounded_rect(w, h, r) {
   }
 }
 
+// Pocket from top: center (cx, cy), size indent_wx × indent_wy in XY
+module top_indent(cx, cy) {
+  translate([cx, cy, T - indent_depth / 2])
+    cube([indent_wx, indent_wy, indent_depth + 0.02], center = true);
+}
+
 // Raised digit at hole center (XY), on top face (Z)
 module hole_label(n) {
   translate([0, 0, T])
@@ -53,21 +67,25 @@ module hole_label(n) {
       text(str(n), size = hole_label_size, halign = "center", valign = "center");
 }
 
+// Midpoint between holes 8 & 9, and between 10 & 11 (same Y’s on both rails)
+pair_y_center = (pocket_holes[0][1] + pocket_holes[1][1]) / 2;
+
 union() {
   difference() {
-    // Solid plate
     linear_extrude(height = T)
       rounded_rect(W, H, R);
 
-    // Through-holes (main pattern)
     for (h = holes)
       translate([h[0], h[1], -0.5])
         cylinder(h = T + 1, d = h[2]);
 
-    // Outer pocket holes
     for (h = pocket_holes)
       translate([h[0], h[1], -0.5])
         cylinder(h = T + 1, d = h[2]);
+
+    // Indents centered on pairs 8–9 (left) and 10–11 (right)
+    top_indent(pocket_holes[0][0], pair_y_center);
+    top_indent(pocket_holes[2][0], pair_y_center);
   }
 
   if (show_hole_labels) {
