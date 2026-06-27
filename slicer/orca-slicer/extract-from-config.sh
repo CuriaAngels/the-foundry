@@ -18,9 +18,9 @@ echo "Extracting from $ORCA_USER -> $DEST"
 mkdir -p "$DEST/process"
 cp -v "$ORCA_USER/process"/*.json "$ORCA_USER/process"/*.info "$DEST/process/" 2>/dev/null || true
 
-# Filament presets (preserve base/ subdir)
-mkdir -p "$DEST/filament/base"
-cp -v "$ORCA_USER/filament/base"/*.json "$ORCA_USER/filament/base"/*.info "$DEST/filament/base/" 2>/dev/null || true
+# Filament presets
+mkdir -p "$DEST/filament"
+cp -v "$ORCA_USER/filament"/*.json "$ORCA_USER/filament"/*.info "$DEST/filament/" 2>/dev/null || true
 
 # Machine/printer (if you add custom printer defs later)
 mkdir -p "$DEST/printer"
