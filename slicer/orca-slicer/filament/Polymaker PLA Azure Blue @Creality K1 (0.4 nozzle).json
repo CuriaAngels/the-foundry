@@ -1,4 +1,5 @@
 {
+    "type": "filament",
     "activate_air_filtration": [
         "0"
     ],

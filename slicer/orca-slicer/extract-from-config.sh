@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
-# Extract Orca Slicer user profiles from ~/.config/OrcaSlicer into this repo.
+# Extract Orca Slicer user profiles from local config into this repo.
+# Supports Flatpak (com.orcaslicer.OrcaSlicer) and legacy ~/.config installs.
 # Run from repo root: ./slicer/orca-slicer/extract-from-config.sh
 
 set -e
-ORCA_USER="${XDG_CONFIG_HOME:-$HOME/.config}/OrcaSlicer/user/default"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DEST="$SCRIPT_DIR"
 
-if [[ ! -d "$ORCA_USER" ]]; then
-  echo "Orca Slicer user config not found: $ORCA_USER"
+FLATPAK_USER="$HOME/.var/app/com.orcaslicer.OrcaSlicer/config/OrcaSlicer/user/default"
+LEGACY_USER="${XDG_CONFIG_HOME:-$HOME/.config}/OrcaSlicer/user/default"
+
+if [[ -d "$FLATPAK_USER" ]]; then
+  ORCA_USER="$FLATPAK_USER"
+elif [[ -d "$LEGACY_USER" ]]; then
+  ORCA_USER="$LEGACY_USER"
+else
+  echo "Orca Slicer user config not found (checked Flatpak and ~/.config)"
   exit 1
 fi
 
